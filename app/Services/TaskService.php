@@ -13,10 +13,10 @@ class TaskService
                 $this->isWeekend( $data['start_date'], 'Start date');
         }
         if(isset($data['deadline'])){
-                $this->isWeekend( $data['deadline'], 'Start date');
+                $this->isWeekend( $data['deadline'], 'Deadline');
         }
         if(isset($data['finish_date'])){
-                $this->isWeekend( $data['finish_date'], 'Start date');
+                $this->isWeekend( $data['finish_date'], 'Finish date');
         }
 
         $ok = \DB::select("SELECT * FROM tasks WHERE (? BETWEEN start_date AND finish_date) OR (? BETWEEN start_date AND finish_date)",
